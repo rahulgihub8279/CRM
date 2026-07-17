@@ -5,8 +5,8 @@ import Loader from "./components/Loader.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import AllInquiry from "./pages/AllInquiry.jsx";
-export const serverUrl = "http://localhost:8000";
-
+export const serverUrl = import.meta.env.VITE_BACKEND_URL;
+ 
 function App() {
   return (
     <>
