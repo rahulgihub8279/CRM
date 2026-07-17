@@ -64,7 +64,7 @@ project-root
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │
-├── server
+├── backend
 │   ├── controllers
 │   ├── middleware
 │   ├── models
@@ -82,7 +82,7 @@ project-root
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/saas-crm.git
+git clone [https://github.com/rahulgihub8279/CRM.git]
 ```
 
 Move into the project
@@ -237,9 +237,7 @@ Deletes an inquiry.
 
 ---
 
-# Author
-
-Rahul Trivedi
+ 
 
 GitHub:
 https://github.com/your-github
