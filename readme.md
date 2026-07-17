@@ -4,11 +4,7 @@ A responsive SaaS CRM landing page built using **React**, **Node.js**, **Express
 
 ---
 
-## 🚀 Live Demo
-
-  
-
----
+ 
 
  
 ## ✨ Features
