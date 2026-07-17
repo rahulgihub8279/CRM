@@ -9,14 +9,14 @@ const app = express();
 const PORT = process.env.PORT;
 
 import userRouter from "./routes/userRoute.js";
-import inquiryRouter from "./routes/inquiryRoute.js"
+import inquiryRouter from "./routes/inquiryRoute.js";
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   }),
 );
@@ -28,4 +28,5 @@ app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
   connectDb();
 });
-3;
+
+export default app;
