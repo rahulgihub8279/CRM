@@ -82,7 +82,7 @@ project-root
 ### Clone Repository
 
 ```bash
-git clone [https://github.com/rahulgihub8279/CRM.git]
+git clone https://github.com/rahulgihub8279/CRM.git
 ```
 
 Move into the project
