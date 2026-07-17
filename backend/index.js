@@ -11,16 +11,14 @@ const PORT = process.env.PORT;
 import userRouter from "./routes/userRoute.js";
 import inquiryRouter from "./routes/inquiryRoute.js";
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
-  }),
-);
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 
+app.use("/",(req ,res)=>{
+  res.send("api working")
+})
 app.use("/api/user", userRouter);
 app.use("/api/inquiry", inquiryRouter);
 
