@@ -6,7 +6,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import AllInquiry from "./pages/AllInquiry.jsx";
 export const serverUrl = import.meta.env.VITE_BACKEND_URL;
- 
+
 function App() {
   return (
     <>

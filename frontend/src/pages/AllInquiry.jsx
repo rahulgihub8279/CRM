@@ -12,8 +12,10 @@ export default function AllInquiry() {
 
   const deleteInquiry = async (id) => {
     try {
-      await axios.delete(`${serverUrl}/api/inquiry/delete/${id}`,{withCredentials:true});
-        toast.success("inquiry deleted")
+      await axios.delete(`${serverUrl}/api/inquiry/delete/${id}`, {
+        withCredentials: true,
+      });
+      toast.success("inquiry deleted");
       setInquiries((prev) => prev.filter((inquiry) => inquiry._id !== id));
     } catch (err) {
       toast.error(err?.response?.data?.message);
@@ -28,7 +30,7 @@ export default function AllInquiry() {
         });
         setInquiries(res.data.allInquiry);
       } catch (err) {
-        console.log(err);
+        toast.error(err?.response?.data?.message);
       } finally {
         setLoading(false);
       }
@@ -49,7 +51,7 @@ export default function AllInquiry() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">Product Inquiries</h1>
 
-        {inquiries.length === 0 ? (
+        {inquiries?.length === 0 ? (
           <div className="text-center text-gray-500">No inquiries found.</div>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

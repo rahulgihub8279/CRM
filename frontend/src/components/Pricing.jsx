@@ -1,56 +1,133 @@
+const plans = [
+  {
+    title: "Starter",
+    price: "$29",
+    color: "text-white",
+    border: "border-zinc-700",
+    button: "bg-white text-black",
+    icon: "text-white",
+    features: [
+      "Lead Management",
+      "Contact Management",
+      "Task & Reminder",
+      "Email Integration",
+      "Basic Reports",
+    ],
+  },
+  {
+    title: "Professional",
+    price: "$79",
+    color: "text-white",
+    border: "border-zinc-700",
+    button: "bg-white text-black",
+    icon: "text-white",
+    features: [
+      "Everything in Starter",
+      "Sales Pipeline",
+      "Team Management",
+      "Workflow Automation",
+      "Advanced Analytics",
+      "Custom Dashboards",
+    ],
+  },
+  {
+    title: "Enterprise",
+    price: "$149",
+    color: "text-lime-400",
+    border: "border-lime-400",
+    button: "bg-lime-400 text-black",
+    icon: "text-lime-400",
+    features: [
+      "Everything in Professional",
+      "AI Lead Scoring",
+      "Predictive Analytics",
+      "Custom API Access",
+      "Unlimited Users",
+      "Priority Support",
+    ],
+  },
+];
+
 export default function Pricing() {
   return (
-    <div className="mt-10 rounded-xl p-3 md:p-5 min-h-[80vh] mx-3 flex flex-col gap-5 md:gap-10">
-      <h1 className="font-bold text-3xl md:text-5xl mt-10 mb-6 pl-10">Pricing</h1>
-      <div className="flex flex-col md:flex-row gap-8 items-center justify-center md:mx-5 lg:mx-10">
-        {""}
-        <div className="flex relative flex-col py-5 gap-7 w-1/3 hover:bg-purple-200 transition duration-200 h-[270px] border-2 border-purple-800 rounded-xl p-4">
-          <h3 className="text-lg font-bold absolute -top-1 left-15 bg-white rounded border-2 border-black px-3">
-            {" "}
-            Starter
-          </h3>
-          <h3 className="text-lg font-bold mt-5"> ₹999/month</h3>
-          <h4 className="font-semibold bg-black w-fit px-5 text-white py-1 rounded">
-            Features
-          </h4>
-          <div className="flex flex-col gap-2 text-sm md:text-[15px]">
-            <span>✔ CRM</span>
-            <span>✔ Leads</span>
-            <span>✔ Email</span>
-          </div>
-        </div>
-        {""}
-        <div className="flex relative flex-col py-5 gap-5 w-1/3 h-[270px] hover:bg-purple-200 transition duration-200 border-2 border-purple-800 rounded-xl p-4">
-          <h3 className="text-lg font-bold absolute -top-1 left-10 bg-white rounded border-2 border-black px-3">
-            {" "}
-            Professional
-          </h3>
-          <h3 className="text-lg font-bold mt-5"> ₹2499/month</h3>
-          <h4 className="font-semibold bg-black w-fit px-5 text-white py-1 ">
-            Features
-          </h4>
-          <div className="flex flex-col gap-2 text-sm md:text-[15px]">
-            <span>✔ Everything in Starter</span>
-            <span>✔ Automation</span>
-            <span>✔ Reports</span>
-            <span>✔ API</span>
-          </div>
-        </div>
-        {""}
-        <div className="flex relative flex-col py-5 gap-5 w-1/3 hover:bg-purple-200 transition duration-200 h-[270px] border-2 border-purple-800 rounded-xl p-4">
-        <h3 className="text-lg font-bold absolute -top-1 left-10 bg-white rounded border-2 border-black px-3">
-            {" "}
-            Enterprise
-          </h3>
-          <h3 className="text-lg font-bold mt-5"> Custom Pricing</h3>
-          <h4 className="font-semibold bg-black w-fit px-5 text-white py-1 ">
-            Features
-          </h4>
-          <div className="flex flex-col gap-2 text-sm md:text-[15px]">
-            <span>✔ Unlimited</span>
-            <span>✔ Priority Support</span>
-            <span>✔ Dedicated Manager</span>
-          </div>
+    <div className="mt-10 rounded-2xl p-3 md:p-5 min-h-screen mx-3 mb-5 flex flex-col gap-4 md:gap-6 bg-[#1a1a1a] items-center shadow-lg shadow-black">
+      <h1 className="font-medium tracking-wide text-2xl md:text-4xl mt-8 text-center text-white">
+        Find the Right Plan for Your Firm
+      </h1>
+      <p className="text-center text-zinc-400 w-[50%] md:w-[35%] text-sm font-light">
+        Start with the features you need today, then compare the automation,
+        reporting, and intelligence capabilities that support growth.
+      </p>
+      <div className="flex items-center gap-4">
+        <button className="text-black bg-white px-3 py-[5px] text-xs md:text-sm font-semibold rounded-lg">
+          Get Demo
+        </button>
+        <button className="text-black bg-[#d9ff42] px-3 py-[5px] text-xs md:text-sm font-semibold rounded-lg">
+          Explore Features
+        </button>
+      </div>
+      <div className="max-w-5xl mx-auto mt-10 mb-10">
+        <div className="grid lg:grid-cols-3 gap-10">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`rounded-3xl border ${plan.border} bg-[#1a1b1d] px-9 flex flex-col transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(163,230,53,0.12)]`}
+            >
+              {/* Icon */}
+
+              {/* Title */}
+              <h3 className={`md:text-3xl text-2xl font-bold mt-6 ${plan.color}`}>
+                {plan.title}
+              </h3>
+
+              {/* Price */}
+              <div className="mt-5 flex items-end gap-2">
+                <span className={`md:text-4xl text-2xl font-bold ${plan.color}`}>
+                  {plan.price}
+                </span>
+
+                <span className="text-zinc-400 mb-2">/ month per user</span>
+              </div>
+
+              <hr className="border-zinc-700 my-5" />
+
+              {/* Description */}
+              <div>
+                <h4 className="text-white text-sm md:text-lg font-semibold mb-3">
+                  Best For :
+                </h4>
+
+                <p className="text-zinc-400 leading-6 text-xs md:text-sm">
+                  Businesses looking to manage customers, sales, and workflows
+                  from a single CRM platform.
+                </p>
+              </div>
+
+              <hr className="border-zinc-700 my-5" />
+
+              {/* Features */}
+              <h4 className="text-white md:text-lg text-sm font-semibold mb-5">
+                Features Included :
+              </h4>
+
+              <div className="space-y-2 flex-1">
+                {plan.features.map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-3 h-3 rotate-45 border border-zinc-300 mt-2"></div>
+
+                    <p className="text-zinc-300 xtext-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Button */}
+              <button
+                className={`mt-10 rounded-xl py-2 mb-5 font-semibold text-sm md:text-lg transition duration-300 cursor-pointer ${plan.button}`}
+              >
+                Get Started
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
