@@ -50,7 +50,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <div className="mt-10 rounded-2xl p-3 md:p-5 min-h-screen mx-3 mb-5 flex flex-col gap-4 md:gap-6 bg-[#1a1a1a] items-center shadow-lg shadow-black">
+    <div className="mt-5 md:mt-10 rounded-2xl p-3 md:p-5 min-h-screen mx-1 md:mx-3 mb-5 flex flex-col gap-4 md:gap-6 bg-[#1a1a1a] items-center shadow-xl shadow-black">
       <h1 className="font-medium tracking-wide text-2xl md:text-4xl mt-8 text-center text-white">
         Find the Right Plan for Your Firm
       </h1>

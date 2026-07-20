@@ -60,10 +60,10 @@ export default function Inquiry() {
     }
   };
   return (
-    <div className="w-screen min-h-[80vh] flex flex-col items-center justify-center gap-8 p-4 mb-10">
+    <div className="md:w-screen min-h-[80vh] flex flex-col items-center justify-center gap-8 p-2 md:p-4 mb-10">
       <h2 className="text-4xl font-bold ">Create Inquiry</h2>
       <form
-        className="py-10 w-100 md:w-150 h-auto bg-white shadow-xl rounded-xl border border-zinc-200 flex flex-col gap-5 items-center justify-center"
+        className="py-10 w-[95%] md:w-150 h-auto bg-white shadow-xl rounded-xl border-2 border-blue-200 flex flex-col gap-5 items-center justify-center"
         onSubmit={(e) => e.preventDefault()}
       >
         {""}

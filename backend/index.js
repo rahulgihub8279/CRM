@@ -10,9 +10,9 @@ const PORT = process.env.PORT;
 
 import userRouter from "./routes/userRoute.js";
 import inquiryRouter from "./routes/inquiryRoute.js";
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
-app.use(morgan("dev"));
 
 app.use(
   cors({
@@ -23,7 +23,9 @@ app.use(
 
 app.use("/api/user", userRouter);
 app.use("/api/inquiry", inquiryRouter);
-
+app.get("/", (req, res) => {
+  res.send("server running");
+});
 app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
   connectDb();
